@@ -80,11 +80,13 @@ def GenerateCode(model, data_loader, num_data, bit):
         data_ind += 1
     return B
 
+# 计算海明距离
 def CalcHammingDist(B1, B2):
     q = B2.shape[1]
     distH = 0.5 * (q - np.dot(B1, B2.transpose()))
     return distH
 
+# 计算Map值
 def CalcMap(qB, rB, queryL, retrievalL):
     # qB: {-1,+1}^{mxq}
     # rB: {-1,+1}^{nxq}
